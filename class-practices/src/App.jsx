@@ -6,8 +6,10 @@ import { SwapiButton } from './components/swapiButton';
 
 const App = () => {
 
-  const [selectedData, setSelectedData] = useState(null);
-  const [count, changeCount] = useState(0)
+  const [selectedData, setSelectedData] = useState({
+  });
+
+  const [count, changeCount] = useState(1)
 
   const getCharacter = async () => {
     changeCount((count) => count + 1);
@@ -20,13 +22,13 @@ const App = () => {
       hairColor: dataJson.hair_color,
       skinColor: dataJson.skin_color,
       eyeColor: dataJson.eye_color,
-      birthYear: dataJson.birth_year,
+      birthYear: dataJson.birth_year
     };
     setSelectedData(updatedSelectedData);
   };
 
-  if (selectedData === null){
-
+  if (selectedData === "undefined"){
+    getCharacter()
     return <Texts text='Loading...' />;
   };
 
@@ -54,7 +56,7 @@ const App = () => {
         />
       </div>
       <div id="fourthButton">
-        <SwapiButton func={getCharacter} text={"Next Character"} />
+        <SwapiButton func={getCharacter} text={"Next"} />
       </div>
     </div>
   );
