@@ -1,4 +1,4 @@
-# Swapi-React
+# Swapi React
 
 This was an exercise to create a card with React using Star Wars characters from the Swapi API.
 This project had a time limit, so it is completed up to the delivery time.
